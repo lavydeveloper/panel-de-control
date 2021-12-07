@@ -1,5 +1,7 @@
 import {burgerMenu} from './burger-menu.js';
-burgerMenu();
-
 import {tabs} from './tabs.js';
+import{form} from './form.js';
+
 tabs();
+burgerMenu();
+form();
