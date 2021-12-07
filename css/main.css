@@ -1,0 +1,546 @@
+/*====================
+=======ESTRUCTURA======
+======================*/
+body{
+    background-color: 	hsl(48, 90%, 60%);
+    display:flex; 
+    flex-direction:column;    
+    margin: 1em auto;
+    min-height: 100vh;
+    width: 90%;
+}
+
+header{
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main{
+    margin: 1em 0;
+    width: 100%;
+}
+
+footer{
+    margin-top: auto; 
+    width: 100%;
+}
+
+.main-element{
+    margin-bottom: 2em;
+}
+
+.footer-element{
+    margin-bottom: 1em;
+}
+
+.columns-4
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.5rem;
+}
+.columns-3
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.5rem;
+}
+.columns-2
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5rem;
+}
+.column
+{
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+/*====================
+======TIPOGRAFÍA======
+======================*/
+
+h1, h2, h3, h4, h5, h6, a, p{
+    color: 	hsl(219, 14%, 25%);
+}
+
+h1, h2, h3, h4 {
+    font-family: "Ubuntu";
+}
+
+h5, h6 {
+    font-family: "Ubuntu Condensed";
+}
+
+a, td, p, button{
+    font-family: "Ubuntu";
+}
+
+h1 {
+    font-weight: 600;
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+h4 {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a {
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -o-transition: 300ms;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 300ms;
+}
+
+a:focus, a:hover {
+    outline: none;
+    outline-offset: 0;
+    text-decoration: none;
+}
+
+/*====================
+========IMÁGENES=========
+======================*/
+
+img {
+    max-width: 100%;
+}
+
+/*====================
+========LOGO=========
+======================*/
+
+.title{
+    margin-left: 1em;
+}
+
+.title h1{
+
+    font-family: 'Dancing Script';
+    font-weight: 400;
+    text-align: left;
+}
+
+/*====================
+========ICONO BURGER=========
+======================*/
+.menu-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    border:3px solid #fff;
+    padding: 0.3em;
+}
+
+.menu-btn__burger {
+    width: 40px;
+    height: 6px;
+    background: hsl(219, 14%, 25%);
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 6px;
+    background: hsl(219, 14%, 25%);
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+}
+
+.menu-btn__burger::before {
+    transform: translateY(-16px);
+}
+
+.menu-btn__burger::after {
+    transform: translateY(16px);
+}
+
+
+.menu-btn.open .menu-btn__burger {
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+    background: hsl(219, 14%, 25%);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+    background: hsl(219, 14%, 25%);
+}
+
+.menu-btn.open{
+    border: 3px solid hsl(0, 0%, 100%);
+}
+/*====================
+========TÍTULO======
+======================*/
+
+.subtitle{
+    margin-bottom: 5em;
+    width: 100%;
+}
+
+.subtitle h2{
+    text-align: center;
+}
+
+/*====================
+=========TABLA CRUD=========
+======================*/
+
+.crud{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.crud__table, .crud__form{
+    min-width: 45%;
+    max-width: 45%;
+}
+.crud__table
+{
+    display: flex;
+    justify-content: center;
+}
+.crud__table table
+{
+    width:100%;
+    table-layout: fixed;
+    overflow-wrap: break-word;
+    font-family: 'Ubuntu';
+    color:hsl(219, 14%, 25%);
+}
+.crud__table table th
+{
+    background-color:hsl(0, 0%, 100%);
+}
+.crud__table table th td
+{
+    font-size: 0.5rem;
+}
+.crud__table table,th,td
+{
+    border: 0.2em solid hsl(0, 0%, 100%);
+}
+.crud__table table th,td
+{
+    width: 100%;
+    max-width: 100%;
+    padding: 1em;
+}
+.crud__table table td
+{
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.crud__table-grid-element{
+    width: 100%;
+}
+
+.crud__table-flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.crud__table-flex-element{
+    flex-basis: 25%;
+}
+
+.crud__form{
+    width: 100%;
+}
+/*====================
+========PESTAÑAS=========
+======================*/
+.tabs-box
+{
+    width: 50em;
+    border-left: 2px hsl(0, 0%, 100%) solid;
+    border-right: 2px hsl(0, 0%, 100%) solid;
+    max-width: 100%;
+}
+.tabs-buttons
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tabs-buttons__element button
+{
+    cursor: pointer;
+    color: hsl(219, 14%, 25%);
+    padding: 0.5em;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 0.2rem;
+    border: none;
+    max-width: 100%;
+    margin: 0 1em;
+    font-size: 1rem;
+}
+.tabs-buttons__element button.tab-active
+{
+    border-bottom: 5px hsl(219, 14%, 25%) solid;
+}
+.tab-content
+{
+    display: none;
+}
+.tab-content.tab-active
+{
+    display: block;
+}
+.tabs-box__content .form__element input
+{
+    border: none;
+    border-bottom: 3px hsl(0, 0%, 100%) solid;
+    background-color: transparent;
+    color:hsl(219, 14%, 25%);
+    margin-left: 30px;
+    padding: 0.5em;
+    width: 50%;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.tabs-box__content .form__element input:focus
+{
+    outline: none;
+    border-bottom: 3px hsl(219, 14%, 25%) solid;
+}
+.tabs-box__content .form__element
+{
+    margin: 2em;
+}
+.tabs-box__content .form__element
+{
+    font-family: "Ubuntu";
+    color: hsl(219, 14%, 25%);
+}
+.tabs_box__content
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*====================
+========FORMULARIO=========
+======================*/
+.tabs-box form
+{
+    padding: 1em;
+}
+.form__element-button button
+{
+    background-image: linear-gradient(to right, #b39cc9 0%, #ffffff 50%, #b39cc9 100%);
+    background-size: 200% auto;
+    border-radius: 1em;
+    border: none;
+    color: hsl(219, 14%, 25%);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 0px;
+    margin-top: 1em;
+    min-width: 20%;
+    padding: 1em 2em;
+    transition: 0.5s;
+    text-decoration: none;
+}
+.form__element-button button:hover
+{
+    background-size: 100% auto;
+}
+.form__element
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*====================
+========PIE DE PÁGINA=========
+======================*/
+.footer-element{
+    width: 100%;
+}
+
+.footer-element p{
+    text-align: center;
+}
+
+.author a p:hover
+{
+   color: hsl(0, 0%, 0%);
+   transition: 1s ease;
+}
+
+.myform
+{
+    max-width: 100%;
+}
+@media (max-width:479px) {
+
+    header{
+        height: 2vh;
+    }
+
+    .main-element{
+        margin: 1.5em 0;
+    }
+
+    .footer-element{
+        margin: 1em 0;
+    }
+
+    .title h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .logo svg{
+        height: 4em;
+        width: 4em;
+    }
+
+    .title{
+        margin-left: 0.5em;
+    }
+
+    .crud{
+        display: block;
+    }
+
+    .crud__table, .crud__form{
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .crud__table-grid{
+        grid-gap: 0;
+    }
+
+    .crud__table-flex{
+        gap: 0;
+    }
+
+}
+@media (max-width:1024px) {
+
+    header{
+        height: 2vh;
+        margin: 2em 0;
+    }
+    .crud__table table
+    {
+       margin: 5em 0;
+    }
+    .main-element{
+        margin: 1.5em 0;
+    }
+
+    .footer-element{
+        margin: 1em 0;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .logo svg{
+        height: 3.5em;
+        width: 3.5em;
+    }
+
+    .title{
+        margin-left: 0.5em;
+    }
+
+    .crud{
+        display: block;
+    }
+
+    .crud__table, .crud__form{
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .crud__table-grid{
+        grid-gap: 0;
+    }
+
+    .crud__table-flex{
+        gap: 0;
+    }
+}
+@media (max-width:1303px)
+{
+    form label
+    {
+        font-size: 0.9rem;
+    }
+}
+@media (min-width: 1920px) {
+
+    h1 {
+        font-size: 3.5em;
+    }
+    
+    h2 {
+        font-size: 3em;
+    }
+
+    .logo svg{
+        height: 4em;
+        width: 4em;
+    }
+
+    .crud__form-inputs input, 
+    .crud__form-inputs textarea,
+    .crud__form-inputs select {
+        font-size: 1.5em;
+        padding: 0.3em;
+    }
+
+    .footer-element p{
+        font-size: 1.5em;
+    }
+}
+
+
+
