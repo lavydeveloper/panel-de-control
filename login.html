@@ -5,7 +5,6 @@
     <meta name="description" content="Examen de HTML y CSS. Maquetación de formulario.">
     <meta name="author" content="Andra Lavinia Diaconu">
     <title>Formulario_JS</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/loginformStyle.css">
 </head>
 <body>
@@ -14,10 +13,12 @@
             <span>Accede a tu cuenta</span>
         </div>
         <div class="form">
-            <form action="" id="login-form">
+            <form action="http://141.94.27.118:8080/api/login" id="login-form">
                 <div class="part-1">
                     <label for="email">Dirección de correo electrónico o nombre de usuario</label>
                     <input type="text" name="email" id="" required>
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="" required>
                     <div class="advice">
                         <div class="advice__element">
                             <span>Al continuar, aceptas nuestras <a href="#"> condiciones del servicio.</a></span>

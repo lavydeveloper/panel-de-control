@@ -1,4 +1,4 @@
-import {getFingerprint} from './client.js';
+import {getID} from './client.js';
 
 export let renderLoginForm = () => {
 
@@ -11,9 +11,9 @@ export let renderLoginForm = () => {
 
             event.preventDefault();
     
-            let url = form.action;
+            let url = form.action;S
             let data = new FormData(loginForm);
-            data.append("fingerprint", getFingerprint());
+            data.append("fingerprint", getID());
     
             let sendPostRequest = async () => {
         
