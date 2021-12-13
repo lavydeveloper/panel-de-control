@@ -11,7 +11,7 @@ export let renderLoginForm = () => {
 
             event.preventDefault();
     
-            let url = form.action;S
+            let url = loginForm.action;
             let data = new FormData(loginForm);
             data.append("fingerprint", getID());
     
