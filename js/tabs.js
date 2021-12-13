@@ -5,6 +5,7 @@ export const tabs = () =>
 
     /*Seleccionar cada elemento del array*/
     if(tabButtons){
+        
         tabButtons.forEach(tabButton => {
 
             /*Evento click a cada uno de los elementos*/
