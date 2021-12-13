@@ -3,34 +3,35 @@ import {getID} from './client.js';
 export const form = () => {
 
     /*ENFOCAR INPUT AL CARGAR LA PÁGINA*/
-    
+    const submitButton = document.getElementById("submit-button");
     window.masterInput = document.querySelector(".focus");
     
     window.addEventListener("load", () => {
         masterInput.focus();
     });
 
-    const submitButton = document.getElementById("submit-button");
+    if(submitButton){
+        submitButton.addEventListener("click", (event) => {
 
-    submitButton.addEventListener("click", (event) => {
-
-        event.preventDefault();
-
-        let formElement = document.getElementById("form");
-        let data = new FormData(formElement);
-
-        data.append("fingerprint",getID());
-
-        if( ckeditors != 'null'){
+            event.preventDefault();
     
-            Object.entries(ckeditors).forEach(([key, value]) => {
-                data.append(key, value.getData());
-            });
-        }
+            let formElement = document.getElementById("form");
+            let data = new FormData(formElement);
+    
+            data.append("fingerprint",getID());
+    
+            if( ckeditors != 'null'){
         
-
-        for (let pair of data.entries()) {
-            console.log(pair[0]+ ', ' + pair[1]); 
-        }
-    });
+                Object.entries(ckeditors).forEach(([key, value]) => {
+                    data.append(key, value.getData());
+                });
+            }
+            
+    
+            for (let pair of data.entries()) {
+                console.log(pair[0]+ ', ' + pair[1]); 
+            }
+        });
+    }
 }
+
