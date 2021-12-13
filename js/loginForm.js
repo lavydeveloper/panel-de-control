@@ -18,6 +18,9 @@ export let renderLoginForm = () => {
             let sendPostRequest = async () => {
         
                 let request = await fetch(url, {
+                    headers: {
+                        'Authorization': 'Bearer' + localStorage.getItem('token'),
+                    },
                     method: 'POST', 
                     body: data
                 })

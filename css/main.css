@@ -332,6 +332,7 @@ img {
 {
     padding: 1em;
 }
+
 .tabs-box__content .form__element input
 {
     border: none;
@@ -389,8 +390,7 @@ img {
 .form__element
 {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
 }
 .form__element .ck-editor__editable
 {
@@ -439,6 +439,50 @@ img {
 .myform
 {
     max-width: 100%;
+}
+.errorAdvice li
+{
+    list-style-type: none;
+    font-family: arial;
+    width: 50%;
+    margin: 0.5em auto;
+}
+.errorAdvice span
+{
+    font-weight: bold;
+    font-family: 'Ubuntu';
+}
+.errorAdvice
+{
+    background-color: #ffffff;
+    border-left: 3px hsl(219, 14%, 25%) solid;
+    border-right: 3px hsl(219, 14%, 25%) solid;
+    padding: 2em 0;
+    text-align: center;
+    display: none;
+}
+.errorAdvice.active
+{
+    display: block;
+}
+#admin-form select
+{
+    width: 100%;
+    border: none;
+    border-bottom: 3px hsl(0, 0%, 100%) solid;
+    color:hsl(219, 14%, 25%);
+    padding: 0.2em;
+    font-family: 'Ubuntu';
+    background-color: transparent;
+}
+#admin-form select:focus
+{
+    outline: none;
+    border-bottom: 3px hsl(219, 14%, 25%) solid;
+}
+#admin-form select:hover
+{
+    cursor: pointer;
 }
 @media (max-width:479px) {
 

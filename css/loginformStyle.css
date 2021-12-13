@@ -45,7 +45,7 @@ a
     font-size: 1.5rem;
     padding: 1em;
 }
-label[for="email"]
+label
 {
     margin: auto;
     font-weight: bold;
