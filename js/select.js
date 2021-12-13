@@ -1,33 +1,30 @@
+
 export const appendOptions = () =>
 {
-    const selectOptions = document.querySelectorAll("select[name='comunidad'] > option");
-    const selectPanels = document.querySelectorAll(".form__element-select-panel");
+    const selectButtons = document.querySelectorAll("#comunidades option");
 
-    /*Seleccionar cada elemento del array*/
-    selectOptions.forEach(selectOption => {
-
-        /*Evento click a cada uno de los elementos*/
-        selectOption.addEventListener("click", () =>{
-
-            /*Seleccionar todos los elementos con la clase .tab-active*/
-            let activeElements = document.querySelectorAll(".panel-active");
-            /*Seleccionar cada elemento del array*/
-            activeElements.forEach(activeElement =>{
-                /*A cada uno de los elementos con la clase .tab-active le quitamos la clase .tab-active*/
-                activeElement.classList.remove("panel-active");
-            });
-            /*A cada uno de los elementos del array le añadimos la clase .tab-active*/
-            selectOption.classList.add("panel-active");
         
-            /*Seleccionar cada elemento del array*/
-            selectPanels.forEach(selectPanel => {
-                /*Si el dataset de tabContent es igual al dataset del tabButton...*/
-                if(selectPanel.dataset.option == selectOption.dataset.option)
-                {
-                    /*Le añadimos a cada elemento del array la clase .tab-active*/
-                    selectPanel.classList.add("panel-active");
-                }
-            });
-        });
-    });
+        let sel = document.querySelector("#opciones");
+        let opt1 = document.createElement("option");
+        let opt2 = document.createElement("option");
+        let opt3 = document.createElement("option");
+        let opt4 = document.createElement("option");
+
+        opt1.value = "1";
+        opt1.text = "Palma de Mallorca";
+
+        opt2.value = "2";
+        opt2.text = "Menorca";
+
+        opt3.value = "3";
+        opt3.text = "Ibiza";
+
+        opt4.value = "4";
+        opt4.text = "Formentera";
+
+        sel.add(opt1);
+        sel.add(opt2);
+        sel.add(opt3);
+        sel.add(opt4);
+
 }

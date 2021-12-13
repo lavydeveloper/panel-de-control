@@ -417,14 +417,6 @@ img {
     padding: 1ex;
     font-family: 'Ubuntu';
 }
-.form__element-select-panel
-{
-    display: none;
-}
-.form__element-select-panel.panel-active
-{
-    display: block;
-}
 /*====================
 ========PIE DE PÁGINA=========
 ======================*/

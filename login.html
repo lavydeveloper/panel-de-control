@@ -1,0 +1,85 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Examen de HTML y CSS. Maquetación de formulario.">
+    <meta name="author" content="Andra Lavinia Diaconu">
+    <title>Formulario_JS</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <main>
+        <div class="title">
+            <span>Accede a tu cuenta</span>
+        </div>
+        <div class="form">
+            <form action="" id="login-form">
+                <div class="part-1">
+                    <label for="email">Dirección de correo electrónico o nombre de usuario</label>
+                    <input type="text" name="email" id="" required>
+                    <div class="advice">
+                        <div class="advice__element">
+                            <span>Al continuar, aceptas nuestras <a href="#"> condiciones del servicio.</a></span>
+                        </div>
+                    </div>
+                    <button id="login-button">Continuar</button>
+                </div>
+                <div class="divider">
+                    <div class="divider__line"></div>
+                    <div class="divider__text">O</div>
+                    <div class="divider__line"></div>
+                </div>
+                <div class="part-2">
+                    <div class="google-button">
+                        <div class="google-button__icon">
+                           <img src="img/google.png" alt="">
+                        </div>
+                        <div class="google-button__text">
+                            <span>Continuar con Google</span>
+                        </div>
+                    </div>
+                    <div class="apple-button">
+                        <div class="apple-button__icon">
+                            <img src="img/apple.png" alt="">
+                        </div>
+                        <div class="apple-button__text">
+                            <span>Continuar con Apple</span>
+                        </div>
+                    </div>
+                    <div class="advice">
+                        <div class="advice__element">
+                            <span>Si continúas con Google o Apple y aún no tienes ninguna cuenta</span>
+                        </div>
+                        <div class="advice__element">
+                            <span>de Wordpress.com, crearás una cuenta, lo que significa que</span>
+                        </div>
+                        <div class="advice__element">
+                            <span>aceptas nuestras<a href="#"> condiciones del servicio.</a></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="create-account">
+            <span>Crear una cuenta</span>
+        </div>
+        <div class="send-link">
+            <span>Enviadme un enlace de acceso por correo electrónico</span>
+        </div>
+        <div class="forget-password">
+            <span>¿Has olvidado tu contraseña?</span>
+        </div>
+    </main>
+
+    <!---Fuente--->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['M+PLUS+2']
+            }
+        });        
+    </script>
+</body>
+</html>
