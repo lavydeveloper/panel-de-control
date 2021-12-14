@@ -6,7 +6,7 @@
     /*outline: 1px red solid;*/
 }
 body{
-    background-color: 	hsl(48, 90%, 60%);
+    background-color:hsl(48, 90%, 60%);
     display:flex; 
     flex-direction:column;    
     margin: 1em auto;
@@ -345,6 +345,13 @@ img {
     font-size: 1rem;
     font-weight: bold;
 }
+
+.tabs-box__content .form__element input.error
+{
+    background-color:  hsl(271, 29%, 70%);
+    border-radius: 0.2rem;
+}
+
 .tabs-box__content .form__element input:focus
 {
     outline: none;
@@ -367,7 +374,7 @@ img {
 }
 .form__element-button button
 {
-    background-image: linear-gradient(to right, #b39cc9 0%, #ffffff 50%, #b39cc9 100%);
+    background-image: linear-gradient(to right, hsl(271, 29%, 70%) 0%, #ffffff 50%, #b39cc9 100%);
     background-size: 200% auto;
     border-radius: 1em;
     border: none;
@@ -440,19 +447,7 @@ img {
 {
     max-width: 100%;
 }
-.errorAdvice li
-{
-    list-style-type: none;
-    font-family: arial;
-    width: 50%;
-    margin: 0.5em auto;
-}
-.errorAdvice span
-{
-    font-weight: bold;
-    font-family: 'Ubuntu';
-}
-.errorAdvice
+.errorAdviceContainer
 {
     background-color: #ffffff;
     border-left: 3px hsl(219, 14%, 25%) solid;
@@ -460,10 +455,53 @@ img {
     padding: 2em 0;
     text-align: center;
     display: none;
+    position: relative;
 }
-.errorAdvice.active
+.errorAdviceContainer.active
 {
     display: block;
+}
+.errorAdviceContainer.show
+{
+    animation: show 0.5s;
+}
+@keyframes show
+{
+    0%
+    {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100%
+    {  
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.errorAdviceContainer li
+{
+    list-style-type: none;
+    font-family: arial;
+    width: 50%;
+    margin: 0.5em auto;
+}
+.errorAdviceContainer span
+{
+    font-weight: bold;
+    font-family: 'Ubuntu';
+}
+.errorAdviceContainer span:nth-child(2)
+{
+    cursor: pointer;
+    position: absolute;
+    top: 0.3em;
+    right: 0.5em;
+    font-size: 3ex;
+}
+.errorAdviceContainer span:nth-child(2):hover
+{
+    transition: 0.2s linear;
+    color: hsl(48, 90%, 60%);
 }
 #admin-form select
 {
@@ -484,6 +522,7 @@ img {
 {
     cursor: pointer;
 }
+
 @media (max-width:479px) {
 
     header{

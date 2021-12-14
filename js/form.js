@@ -2,9 +2,9 @@ import {getID} from './client.js';
 
 export const form = () => {
 
-    /*ENFOCAR INPUT AL CARGAR LA PÁGINA*/
     const submitButton = document.getElementById("submit-button");
     const adminForm = document.getElementById("admin-form");
+    const closeAdviceButton = document.querySelector(".close-advice");
 
     window.masterInput = document.querySelector(".focus");
     
@@ -26,7 +26,7 @@ export const form = () => {
         
                 let request = await fetch(url, {
                     headers: {
-                        'Authorization': 'Bearer' + localStorage.getItem('token'),
+                        'Authorization': 'Bearer ' + localStorage.getItem('token'),
                     },
                     method: 'POST', 
                     body: data
@@ -39,35 +39,52 @@ export const form = () => {
                     return response.json();
                 })
                 .then(json => {
-                    localStorage.setItem('token', json.data);
                     console.log(json.data);
                 })
                 .catch(error => {
-                    
+            
                     if(error.status == '400'){
     
                         error.json().then(jsonError => {
     
                             let errors = jsonError.data;
+                            let errorBox = document.querySelector(".errorAdviceContainer");
+                            errorBox.classList.add("active");
+                            errorBox.classList.add("show");
                             
-                            console.log(errors)
+                            let errorBoxMessage = document.querySelector(".errorAdvice");
+                            errorBoxMessage.innerHTML="";
+                            
                             
                             Object.keys(errors).forEach( (key) => {
 
                                 let errorMessage = document.createElement('li');
-                                let errorBox = document.querySelector(".errorAdvice");
 
                                 errorMessage.textContent = errors[key];
 
-                                errorBox.classList.add("active");
-                                errorBox.appendChild(errorMessage);
+                                errorBoxMessage.appendChild(errorMessage);
+
+                                document.querySelector(`[name=${key}]`).classList.add("error");
                             })
+
+                            closeAdviceButton.addEventListener("click", () =>{
+
+                                errorBox.classList.remove("active");
+
+                                Object.keys(errors).forEach( (key) => {
+    
+                                    document.querySelector(`[name=${key}]`).classList.remove("error");
+
+                                })
+
+                            });
                         })   
                     }
     
                     if(error.status == '500'){
                         console.log(error);
                     }
+
                 });
     
                 // En caso de usar Axios

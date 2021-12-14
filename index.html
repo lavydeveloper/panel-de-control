@@ -35,20 +35,20 @@
 
             <div class="main-element crud">
                 <div class="crud__table">
-                    <div class="crud__table-element">
-                        <table>
+                    <table class="crud__table-element" data-headers='["id", "name","email"]' data-url="http://141.94.27.118:8080/api/users">
+                        <!--<table>
                             <tr>
                                 <th>ID</th>
-                                <th>TÍTULO</th>
-                                <th>PRECIO</th>
+                                <th>NOMBRE</th>
+                                <th>EMAIL</th>
                             </tr>
                             <tr>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
-                        </table>
-                      </div>
+                        </table>-->
+                    </table>
                 </div>
                 <div class="crud__form">
                     <div class="crud__form-inputs row">
@@ -65,7 +65,9 @@
                             <div class="tabs-box__content">
                                 <div class="tabs-box__content-form">
                                     <form action="http://141.94.27.118:8080/api/register" class="form" id="admin-form">
-                                        <div class="errorAdvice"><span>Errores:</span></div>
+
+                                        <div class="errorAdviceContainer">Errores:<span class="errorAdvice"></span><span class="close-advice">&#10006;</span></div>
+
                                         <div class="tab-content tab-active" data-tab="content">
                                             <div class="form__element">
                                                 <label for="name">Nombre</label>
