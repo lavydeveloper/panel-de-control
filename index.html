@@ -17,7 +17,7 @@
         <header>
             <div class="header-element logo">
                 <div class="logo__element title">
-                    <h1>LavyDeveloper</h1>
+                    <h1>Lavy<span>Dev</span>eloper.</h1>
                 </div>
             </div>
             <div class="menu-icon">
@@ -34,41 +34,26 @@
             </div>
 
             <div class="main-element crud">
-                <div class="crud__table">
-                    <table class="crud__table-element" data-headers='["id", "name","email"]' data-url="http://141.94.27.118:8080/api/users">
-                        <!--<table>
-                            <tr>
-                                <th>ID</th>
-                                <th>NOMBRE</th>
-                                <th>EMAIL</th>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                        </table>-->
-                    </table>
-                </div>
+                <div class="crud__table" data-url="http://141.94.27.118:8080/api/users"></div>
                 <div class="crud__form">
                     <div class="crud__form-inputs row">
                         <!--Pestañas formulario-->
                         <div class="tabs-box">
                             <div class="tabs-buttons">
                                 <div class="tabs-buttons__element">
-                                    <button data-tab="content" class="tab-active">Contenido</button>
+                                    <button data-tab="register" class="tab-active">Registro</button>
                                 </div>
                                 <div class="tabs-buttons__element">
-                                    <button data-tab="shop">Tienda</button>
+                                    <button data-tab="login">Login</button>
                                 </div>
                             </div>
+
                             <div class="tabs-box__content">
                                 <div class="tabs-box__content-form">
                                     <form action="http://141.94.27.118:8080/api/register" class="form" id="admin-form">
-
                                         <div class="errorAdviceContainer">Errores:<span class="errorAdvice"></span><span class="close-advice">&#10006;</span></div>
 
-                                        <div class="tab-content tab-active" data-tab="content">
+                                        <div class="tab-content tab-active" data-tab="register">
                                             <div class="form__element">
                                                 <label for="name">Nombre</label>
                                                 <input type="text" name="name" class="focus">
@@ -91,96 +76,19 @@
                                                     <option value="user">User</option>
                                                 </select>
                                             </div>
-                                            <!--<div class="form__element">
-                                                <label for="title">Título</label><br>
-                                                <input type="text" name="title" class="focus">
-                                            </div>
-
-                                            <div class="form__element">
-                                                <label for="editor">Editor</label><br>
-                                                <input type="text" name="editor">
-                                            </div>
-
-                                            <div class="form__element">
-                                                <label for="author">Autor</label>
-                                                <input type="text" name="author">
-                                            </div>
-                                            <div class="form__element-select">
-                                                <label for="comunidad">Comunidad autónoma</label><br>
-                                                <select id="comunidades" name="comunidad">
-                                                    <option value="" disabled selected hidden>Seleccionar</option>
-                                                    <option value="0" data-option="0">Islas Baleares</option>
-                                                    <option value="1" data-option="1">Comunidad Valenciana</option>
-                                                    <option value="2" data-option="2">Andalucía</option>
-                                                    <option value="3" data-option="3">Galicia</option>
-                                                </select>
-                                            </div>
-                                            <div class="form__element-select-panel" data-option="0">
-                                                <label for="comunidad">Ciudades</label><br>
-                                                <select id="#opciones" name="ciudad" placeholder="--">
-                                                    <option value="" disabled selected hidden>Seleccionar</option>
-                                                    
-                                                </select>
-                                            </div>-->
-                                            <!--<div class="form__element-select-panel" data-option="1">
-                                                <label for="comunidad">Ciudad</label><br>
-                                                <select name="comunidad" placeholder="--">
-                                                    <option value="" disabled selected hidden>Seleccionar</option>
-                                                    <option value="0">Valencia</option>
-                                                    <option value="1">Alicante</option>
-                                                    <option value="2">Castellón</option>
-                                                </select>
-                                            </div>
-                                            <div class="form__element-select-panel" data-option="2">
-                                                <label for="comunidad">Ciudad</label><br>
-                                                <select name="comunidad" placeholder="--">
-                                                    <option value="" disabled selected hidden>Seleccionar</option>
-                                                    <option value="0">Sevilla</option>
-                                                    <option value="1">Málaga</option>
-                                                    <option value="2">Cádiz</option>
-                                                    <option value="3">Granada</option>
-                                                    <option value="4">Córdoba</option>
-                                                    <option value="5">Almería</option>
-                                                    <option value="6">Huelva</option>
-                                                </select>
-                                            </div>
-                                            <div class="form__element-select-panel" data-option="3">
-                                                <label for="comunidad">Ciudad</label><br>
-                                                <select name="comunidad" placeholder="--">
-                                                    <option value="" disabled selected hidden>Seleccionar</option>
-                                                    <option value="0">La Coruña</option>
-                                                    <option value="1">Pontevedra</option>
-                                                    <option value="2">Orense</option>
-                                                    <option value="3">Lugo</option>
-                                                </select>
-                                            </div>-->
-                                            <!--<div class="form__element">
-                                                <div class="form__element-textarea">
-                                                    <label for="suggestion">Sugerencias</label><br>
-                                                    <textarea name="suggestions" class="ckeditor ckeditor__editable"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="tab-content" data-tab="shop">
-                                            <div class="form__element">
-                                                <label for="price">Precio</label><br>
-                                                <input type="text" name="price" class="focus">
-                                            </div>
-                                            <div class="form__element">
-                                                <div class="form__element-textarea">
-                                                    <label for="claim">Reclamación</label><br>
-                                                    <textarea name="claim" class="ckeditor ckeditor__editable"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>-->
                                         <div class="form__element">
                                             <div class="form__element-button">
-                                                <button id="submit-button">Enviar</button>
+                                                <button id="submit-button" target="_new">Enviar</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
+
+                            <div class="tab-content" data-tab="login">
+                                <a href="login.html" target="_new">LOGIN</a>
+                            </div>
+
                         </div>
                         <!--*******FIN Pestañas formulario********-->
                     </div>

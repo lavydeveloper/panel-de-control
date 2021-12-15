@@ -79,10 +79,11 @@ input[type="text"], input[type="password"]
 }
 button
 {
-    background-color: hsl(337, 58%, 50%);
+    background-color: hsl(48, 90%, 60%);
     border: none;
     border-radius: 0.2rem;
-    color:hsl(0, 0%, 100%);
+    color: hsl(219, 14%, 25%);
+    font-weight: bold;
     cursor: pointer;
     margin-top: 1.5em;
     width: 100%;
@@ -90,8 +91,8 @@ button
 }
 button:hover
 {
-    transition: 0.3s linear;
-    background-color: hsl(337, 70%, 50%);
+    transition: 0.2s linear;
+    background-color: hsl(48, 90%, 70%);
 }
 .divider
 {

@@ -1,13 +1,12 @@
 export const renderTable = () => {
 
-    const tables = document.querySelectorAll(".crud__table-element");
+    const tables = document.querySelectorAll(".crud__table");
 
     if(tables){
 
         tables.forEach(table => {
 
             let url = table.dataset.url;
-            let headers = JSON.parse(table.dataset.headers);
  
             let sendGetRequest = async () => {
         
@@ -24,22 +23,31 @@ export const renderTable = () => {
                 })
                 .then(json => {
 
-                    let master = document.createElement("tr");
-
-                    headers.forEach(header => {
-
-                        let masterTitle = document.createElement("th");
-                        
-                        table.appendChild(master);
-                        master.appendChild(masterTitle);
-                        masterTitle.textContent = header;
-                        
-                        console.log(header);
-                    })
-
                     let data = json.data;
 
-                    console.log(data);
+                    let tableElement = document.createElement("table");
+                    let headers = document.createElement("tr");
+                    tableElement.appendChild(headers);
+
+                    Object.keys(data[0]).forEach((key) =>{
+                        let header = document.createElement("th");
+                        header.textContent = key;
+                        headers.appendChild(header);
+                    });
+
+                    data.forEach( row => {
+
+                        let dataRow = document.createElement("tr");
+                        tableElement.appendChild(dataRow);
+
+                        Object.values(row).forEach((value) =>{
+                            let field =  document.createElement("td");
+                            field.textContent = value;
+                            dataRow.appendChild(field);
+                        });
+                    })
+
+                    table.appendChild(tableElement);
                 })
 
             };

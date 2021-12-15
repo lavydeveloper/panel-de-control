@@ -6,6 +6,7 @@ import {form} from './form.js';
 // import {appendOptions} from './select.js';
 import {renderLoginForm} from './loginForm.js';
 import {renderTable} from './table.js';
+import './tableComponent.js';
 
 
 
