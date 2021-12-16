@@ -234,6 +234,7 @@ img {
 {
     display: flex;
     justify-content: center;
+    display: none;
 }
 .crud__table table
 {
@@ -416,25 +417,6 @@ img {
     padding: 1ex;
     font-family: 'Ubuntu';
 }
-/*===============CONTENIDO PESTAÑA LOGIN==================*/
-div[data-tab="login"]
-{
-    width: 100%;
-    text-align: center;
-}
-/*====================
-========PIE DE PÁGINA=========
-======================*/
-.footer-element
-{
-    width: 100%;
-}
-
-.footer-element p
-{
-    text-align: center;
-}
-
 .author a p:hover
 {
    color: hsl(0, 0%, 0%);
@@ -519,6 +501,49 @@ div[data-tab="login"]
 #admin-form select:hover
 {
     cursor: pointer;
+}
+/*===============CONTENIDO PESTAÑA LOGIN==================*/
+div[data-tab="login"]
+{
+    width: 100%;
+    text-align: center;
+}
+/*====================
+========PIE DE PÁGINA=========
+======================*/
+
+/*===============AVISO DE ENVÍO DE DATOS==================*/
+.data-sent-advice
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial';
+    color: hsl(219, 14%, 25%);
+    opacity: 0;
+}
+.data-sent-advice.active
+{
+    opacity: 1;
+}
+.data-sent-advice .data-sent-advice__icon img
+{
+    width: 2em;
+    height: 2em;
+}
+.data-sent-advice .data-sent-advice__icon, .data-sent-advice__text
+{
+    margin: 0 0.5em;
+}
+/*===============PIE DE PÁGINA==================*/
+.footer-element
+{
+    width: 100%;
+}
+
+.footer-element p
+{
+    text-align: center;
 }
 
 @media (max-width:479px) {

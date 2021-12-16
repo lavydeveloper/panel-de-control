@@ -39,6 +39,9 @@ export const form = () => {
                     return response.json();
                 })
                 .then(json => {
+
+                    document.dispatchEvent(new CustomEvent('sentFormAdvice'));
+                    
                     console.log(json.data);
                 })
                 .catch(error => {

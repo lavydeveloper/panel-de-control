@@ -9,8 +9,10 @@
 		<meta name="description" content="Panel de control, recogida de datos">
 
         <link href="css/main.css" rel="stylesheet">
+
         <script defer src="node_modules\clientjs\dist\client.min.js"></script>
         <script type="module" src="js/app.js"></script>
+        <script src="js/filter.js"></script>
     </head>
     
     <body>
@@ -51,7 +53,17 @@
                             <div class="tabs-box__content">
                                 <div class="tabs-box__content-form">
                                     <form action="http://141.94.27.118:8080/api/register" class="form" id="admin-form">
+
                                         <div class="errorAdviceContainer">Errores:<span class="errorAdvice"></span><span class="close-advice">&#10006;</span></div>
+
+                                        <div class="data-sent-advice">
+                                            <div class="data-sent-advice__text">
+                                                <span>Datos guardados correctamente</span>
+                                            </div>
+                                            <div class="data-sent-advice__icon">
+                                                <img src="icons/check.webp" alt="Icono marca de correcto">
+                                            </div>
+                                        </div>
 
                                         <div class="tab-content tab-active" data-tab="register">
                                             <div class="form__element">
