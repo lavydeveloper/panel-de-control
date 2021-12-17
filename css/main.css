@@ -217,6 +217,27 @@ img {
 }
 
 /*====================
+=========FILTRO TABLA CRUD=========
+======================*/
+.main-element.filter
+{
+    width: 100%;
+}
+.main-element.filter input
+{
+    border: 1px hsl(0, 0%, 80%) solid;
+    border-radius: 0.2rem;
+    color:hsl(219, 14%, 25%);
+    font-family: 'Ubuntu';
+    padding: 1em;
+    width: 100%;
+}
+.main-element.filter input:focus
+{
+    outline: none;
+}
+
+/*====================
 =========TABLA CRUD=========
 ======================*/
 
@@ -226,7 +247,7 @@ img {
     width: 100%;
 }
 
-.crud__table, .crud__form{
+.crud__table, .crud__form, .main-element.filter{
     min-width: 45%;
     max-width: 45%;
 }
@@ -234,7 +255,6 @@ img {
 {
     display: flex;
     justify-content: center;
-    display: none;
 }
 .crud__table table
 {
@@ -243,7 +263,6 @@ img {
     overflow-wrap: break-word;
     font-family: 'Ubuntu';
     color:hsl(219, 14%, 25%);
-    /*border: 2px solid hsl(219, 14%, 25%);*/
 }
 .crud__table-element th,td
 {
@@ -513,7 +532,7 @@ div[data-tab="login"]
 ======================*/
 
 /*===============AVISO DE ENVÍO DE DATOS==================*/
-.data-sent-advice
+/*.data-sent-advice
 {
     display: flex;
     justify-content: center;
@@ -534,7 +553,7 @@ div[data-tab="login"]
 .data-sent-advice .data-sent-advice__icon, .data-sent-advice__text
 {
     margin: 0 0.5em;
-}
+}*/
 /*===============PIE DE PÁGINA==================*/
 .footer-element
 {

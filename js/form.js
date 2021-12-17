@@ -33,16 +33,19 @@ export const form = () => {
                 })
                 .then(response => {
                     if (!response.ok) throw response;
-    
-                    console.log(response.data);
-    
+        
                     return response.json();
                 })
                 .then(json => {
-
-                    document.dispatchEvent(new CustomEvent('sentFormAdvice'));
                     
-                    console.log(json.data);
+                    document.dispatchEvent(new CustomEvent('message',{
+                        detail:
+                        {
+                            message: json.message,
+                            type: 'success'
+                        }
+                    }));
+
                 })
                 .catch(error => {
             

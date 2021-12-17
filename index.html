@@ -12,7 +12,7 @@
 
         <script defer src="node_modules\clientjs\dist\client.min.js"></script>
         <script type="module" src="js/app.js"></script>
-        <script src="js/filter.js"></script>
+        <!--<script src="js/filter.js"></script>-->
     </head>
     
     <body>
@@ -34,10 +34,14 @@
             <div class="main-element subtitle">
                 <h2>Panel de control</h2>
             </div>
-
+            <div class="main-element filter">
+                <input type="text" class="focus">
+            </div>
             <div class="main-element crud">
                 <div class="crud__table" data-url="http://141.94.27.118:8080/api/users"></div>
+
                 <div class="crud__form">
+
                     <div class="crud__form-inputs row">
                         <!--Pestañas formulario-->
                         <div class="tabs-box">
@@ -56,19 +60,21 @@
 
                                         <div class="errorAdviceContainer">Errores:<span class="errorAdvice"></span><span class="close-advice">&#10006;</span></div>
 
-                                        <div class="data-sent-advice">
+                                        <advice-component></advice-component>
+
+                                        <!--<div class="data-sent-advice">
                                             <div class="data-sent-advice__text">
                                                 <span>Datos guardados correctamente</span>
                                             </div>
                                             <div class="data-sent-advice__icon">
                                                 <img src="icons/check.webp" alt="Icono marca de correcto">
                                             </div>
-                                        </div>
+                                        </div>-->
 
                                         <div class="tab-content tab-active" data-tab="register">
                                             <div class="form__element">
                                                 <label for="name">Nombre</label>
-                                                <input type="text" name="name" class="focus">
+                                                <input type="text" name="name">
                                             </div>
                                             <div class="form__element">
                                                 <label for="email">Email</label>
