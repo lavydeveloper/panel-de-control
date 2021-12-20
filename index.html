@@ -12,7 +12,7 @@
 
         <script defer src="node_modules\clientjs\dist\client.min.js"></script>
         <script type="module" src="js/app.js"></script>
-        <!--<script src="js/filter.js"></script>-->
+
     </head>
     
     <body>
@@ -35,10 +35,12 @@
                 <h2>Panel de control</h2>
             </div>
             <div class="main-element filter">
-                <input type="text" class="focus">
+                <input id="search" type="text" class="focus" placeholder="Buscar...">
             </div>
             <div class="main-element crud">
-                <div class="crud__table" data-url="http://141.94.27.118:8080/api/users"></div>
+                <div class="crud__table" data-url="http://141.94.27.118:8080/api/users">
+                </div>
+                <span class="notFoundAdvice">No se han encontrado resultados :(</span>
 
                 <div class="crud__form">
 

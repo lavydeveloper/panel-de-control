@@ -1,44 +1,47 @@
-// export const inputFilter = () =>
-// {
+export const inputFilter = () => {
 
-//     let searchInput = document.querySelector(".main-element.filter input");
-// console.log(searchInput)
-// searchInput.addEventListener("keyup", () =>{
+    const searchInput = document.querySelector("#search");
 
-//     let dataInput = searchInput.value.toLowerCase();
-//     let table = document.querySelector(".crud__table");
-//     let rows = table.getElementsByTagName("tr");
+    searchInput.addEventListener("keyup", () =>{
+  
+        let filter = searchInput.value.toLowerCase();
+        let table = document.querySelector(".crud__table");
+        let rows = table.querySelectorAll(".crud__table-row");
 
+        rows.forEach(row =>
+        {
+            let txtValue = row.innerText;
+            let message = document.querySelector(".notFoundAdvice");  
+            
+            if (txtValue.toLowerCase().indexOf(filter) > -1) 
+            {
+                row.style.display = "";
+            } else 
+            {
+                row.style.display = "none";
+                message.classList.remove("active");
+            }
+        });       
+    });
 
-//     /*for (i = 0; i < rows.length; i++) {
-//         columns = rows[i].getElementsByTagName("td")[0];
-//         if (columns) {
-//           txtValue = td.textContent || td.innerText;
-//           if (txtValue.toLowerCase().indexOf(dataInput) > -1) {
-//             rows[i].style.display = "";
-//           } else {
-//             rows[i].style.display = "none";
-//           }
-//         }       
-//       }
-//     }*/
-// }
-/*rows.forEach(row => {
-        columns.forEach(column =>{
+    /*columns.forEach(column =>
+        {  
+
             if(column)
             {
                 let textValue = column.textContent || column.innerText;
 
-                if(textValue.toLowerCase().indexOf(dataInput) > -1){
-                    row.style.display= "block";
+                if(textValue.toUpperCase().indexOf(filter) > -1)
+                {
+                    row.style.display = "";
                 }else
                 {
-                    row.style.display= "none";
+                    row.style.display = "none";
                 }
             }
-        });
-    });
-});*/
+
+        });*/
+}
 
 /*let data = [
     {

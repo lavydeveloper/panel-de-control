@@ -221,7 +221,7 @@ img {
 ======================*/
 .main-element.filter
 {
-    width: 100%;
+    width: 50%;
 }
 .main-element.filter input
 {
@@ -230,7 +230,7 @@ img {
     color:hsl(219, 14%, 25%);
     font-family: 'Ubuntu';
     padding: 1em;
-    width: 100%;
+    width: 50%;
 }
 .main-element.filter input:focus
 {
@@ -274,7 +274,7 @@ img {
 .crud__table-element table,th
 {
     background-color:hsl(271, 29%, 70%);
-    color: hsl(0, 0%, 93%);
+    color: hsl(0, 0%, 100%);
 }
 
 .crud__table-element th,td
@@ -531,29 +531,17 @@ div[data-tab="login"]
 ========PIE DE PÁGINA=========
 ======================*/
 
-/*===============AVISO DE ENVÍO DE DATOS==================*/
-/*.data-sent-advice
+/*===============AVISO==================*/
+.notFoundAdvice
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Arial';
-    color: hsl(219, 14%, 25%);
-    opacity: 0;
+    display: none;
+    text-align: center;
+    font-size: 1rem;
 }
-.data-sent-advice.active
+.notFoundAdvice.active
 {
-    opacity: 1;
+    display: block;
 }
-.data-sent-advice .data-sent-advice__icon img
-{
-    width: 2em;
-    height: 2em;
-}
-.data-sent-advice .data-sent-advice__icon, .data-sent-advice__text
-{
-    margin: 0 0.5em;
-}*/
 /*===============PIE DE PÁGINA==================*/
 .footer-element
 {
@@ -668,6 +656,14 @@ div[data-tab="login"]
 
     .crud__table-flex{
         gap: 0;
+    }
+    .main-element.filter
+    {
+        width: 100%;
+    }
+    .main-element.filter input
+    {
+        width: 100%;
     }
 }
 @media (max-width:1303px)

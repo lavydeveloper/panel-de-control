@@ -26,29 +26,38 @@ export const renderTable = () => {
                     let data = json.data;
 
                     let tableElement = document.createElement("table");
+                    let thead = document.createElement("thead");
                     let headers = document.createElement("tr");
-                    tableElement.appendChild(headers);
+
+                    tableElement.appendChild(thead);
+                    thead.appendChild(headers);
 
                     Object.keys(data[0]).forEach((key) =>{
                         let header = document.createElement("th");
+
                         header.textContent = key;
                         headers.appendChild(header);
+                        
                     });
 
                     data.forEach( row => {
 
                         let dataRow = document.createElement("tr");
+
+                        dataRow.classList.add("crud__table-row");
                         tableElement.appendChild(dataRow);
 
                         Object.values(row).forEach((value) =>{
-                            let field =  document.createElement("td");
-                            field.textContent = value;
-                            dataRow.appendChild(field);
+                            let column =  document.createElement("td");
+                            
+                            column.textContent = value;
+                            dataRow.appendChild(column);
+                            
                         });
                     })
 
                     table.appendChild(tableElement);
-                })
+                });
 
             };
     
